@@ -1,7 +1,34 @@
 # Crossbar
 ![alt text][status]
 
-Websocket relay server with topics 
+TCP relay server with topics 
+
+Uses hijacking - but to get the topics you still have to make an initial request
+
+
+see [here](https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html) for details on making requests.
+
+A minimal request is:
+``` 
+GET /pub/WWW/TheProject.html HTTP/1.1
+Host: www.w3.org
+```
+
+Typing the following in two different terminals allows the two terminals to communicate
+```
+socat - tcp:localhost:5559
+GET /foo HTTP/1.1
+Host: shell.practable.io
+```
+
+Setting up another pair of terminals that request a different routing gives a separate comms channel
+```
+socat - tcp:localhost:5559
+GET /bar HTTP/1.1
+Host: shell.practable.io
+```
+
+
 
 Features:
 

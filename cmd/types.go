@@ -1,6 +1,9 @@
 package cmd
 
 import (
+	"bufio"
+	"bytes"
+	"net"
 	"sync"
 	"time"
 
@@ -12,8 +15,12 @@ import (
 type Client struct {
 	hub *Hub
 
-	// The websocket connection.
+	// for stats reporting over websocket
 	conn *websocket.Conn
+
+	// for the hjiacked tcp connections
+	bufrw *bufio.ReadWriter
+	hconn net.Conn
 
 	// Buffered channel of outbound messages.
 	send chan message
@@ -133,4 +140,9 @@ type messageStats struct {
 	topic string
 	rx    []string
 	size  int
+}
+
+type mutexBuffer struct {
+	mux sync.Mutex
+	b   bytes.Buffer
 }

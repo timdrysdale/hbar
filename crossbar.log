@@ -83,3 +83,7 @@
 {"level":"fatal","msg":"ListenAndServe: listen tcp :8080: bind: address already in use","time":"2019-11-10T22:27:40Z"}
 {"level":"fatal","msg":"ListenAndServe: listen tcp :8080: bind: address already in use","time":"2019-11-10T22:28:05Z"}
 {"level":"fatal","msg":"ListenAndServe: listen tcp :234: bind: permission denied","time":"2019-11-10T22:35:43Z"}
+{"level":"fatal","msg":"ListenAndServe: listen tcp :5555: bind: address already in use","time":"2019-11-11T00:59:36Z"}
+{"level":"fatal","msg":"ListenAndServe: listen tcp :5555: bind: address already in use","time":"2019-11-11T00:59:44Z"}
+{"level":"fatal","msg":"ListenAndServe: http: Server closed","time":"2019-11-11T01:03:51Z"}
+{"level":"fatal","msg":"ListenAndServe: http: Server closed","time":"2019-11-11T01:06:06Z"}
